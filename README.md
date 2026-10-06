@@ -106,7 +106,3 @@ build.bat                Windows 便携程序构建入口
 公开数据出处见 [DATA_SOURCES.md](docs/DATA_SOURCES.md)，第三方组件声明见 [THIRD_PARTY_NOTICES.md](docs/THIRD_PARTY_NOTICES.md)，原始许可文件保存在 `docs/third_party_licenses/`。
 
 本项目自身代码采用 [Apache License 2.0](LICENSE)。第三方组件和公开数据保留各自的来源与许可条件，本项目许可证不替代第三方许可。
-
-## 上传 GitHub
-
-本文件所在目录就是仓库根目录。使用 GitHub Desktop 或 Git 提交，`.gitignore` 会自动排除本机的 `dist/`、`.venv/`、用户实验数据与运行日志，这些文件仍保留在电脑上供正常使用。不要在网页中把整个文件夹全部拖入上传。具体操作见 [GitHub 上传说明](docs/GITHUB_UPLOAD.md)。
