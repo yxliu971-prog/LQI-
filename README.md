@@ -1,4 +1,4 @@
-# LQI
+# LQI化学机器学习应用软件
 
 面向实验化学家的本地分子属性回归桌面应用。使用 PySide6、RDKit、Scikit-learn、LightGBM、XGBoost 和 SHAP；浅紫白色中文界面，英文技术术语附中文说明。实验数据在本机计算。
 
