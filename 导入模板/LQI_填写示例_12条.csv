@@ -1,0 +1,13 @@
+﻿样品编号,smiles（分子线性编码）,target（目标实测值）,温度（℃）,时间（h）,浓度（mol/L）
+ESOL-001,CC/C=C\C,-2.54,,,
+ESOL-002,O=C1NC(=O)NC(=O)C1(CC)CC=C(C)C,-2.253,,,
+ESOL-003,Cc1[nH]c(=O)n(c(=O)c1Cl)C(C)(C)C,-2.484,,,
+ESOL-004,CC/C=C/C,-2.54,,,
+ESOL-005,ClC(Cl)C(c1ccc(Cl)cc1)c2ccc(Cl)cc2 ,-7.2,,,
+ESOL-006,O=Cc1ccccc1,-1.19,,,
+ESOL-007,c1cc2ccc(OC)c(CC=C(C)(C))c2oc1=O ,-4.314,,,
+ESOL-008,ON=Cc1ccc(o1)N(=O)=O ,-2.19,,,
+ESOL-009,Clc1ccc(c(Cl)c1Cl)c2c(Cl)cc(Cl)c(Cl)c2Cl ,-7.66,,,
+ESOL-010,CON(C)C(=O)Nc1ccc(Cl)cc1,-2.57,,,
+ESOL-011,CC(=O)C1CCC2C3CCC4=CC(=O)CCC4(C)C3CCC12C,-4.42,,,
+ESOL-012,COP(=O)(NC(C)=O)SC ,0.54,,,

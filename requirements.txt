@@ -1,0 +1,11 @@
+PySide6-Essentials>=6.8,<7
+rdkit>=2024.9
+numpy>=2,<3
+pandas>=2.2,<4
+scikit-learn>=1.6,<2
+lightgbm>=4.5,<5
+xgboost>=2.1,<4
+shap>=0.47,<1
+openpyxl>=3.1,<4
+matplotlib>=3.9,<4
+reportlab>=4,<6

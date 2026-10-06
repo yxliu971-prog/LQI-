@@ -1,0 +1,61 @@
+﻿分子名称,smiles,logS (mol/L)
+cis-2-Pentene,CC/C=C\C,-2.54
+5-(3-Methyl-2-butenyl)-5-ethylbarbital,O=C1NC(=O)NC(=O)C1(CC)CC=C(C)C,-2.253
+Terbacil,Cc1[nH]c(=O)n(c(=O)c1Cl)C(C)(C)C,-2.484
+trans-2-Pentene ,CC/C=C/C,-2.54
+"P,P'-DDD",ClC(Cl)C(c1ccc(Cl)cc1)c2ccc(Cl)cc2 ,-7.2
+Benzaldehyde,O=Cc1ccccc1,-1.19
+osthole,c1cc2ccc(OC)c(CC=C(C)(C))c2oc1=O ,-4.314
+nifuroxime,ON=Cc1ccc(o1)N(=O)=O ,-2.19
+"2,3,3',4,4'6-PCB",Clc1ccc(c(Cl)c1Cl)c2c(Cl)cc(Cl)c(Cl)c2Cl ,-7.66
+Monolinuron,CON(C)C(=O)Nc1ccc(Cl)cc1,-2.57
+Progesterone,CC(=O)C1CCC2C3CCC4=CC(=O)CCC4(C)C3CCC12C,-4.42
+Acephate,COP(=O)(NC(C)=O)SC ,0.54
+"1,3,5-Trimethylbenzene ",Cc1cc(C)cc(C)c1,-3.4
+"1,1,1,2-Tetrachloroethane",ClCC(Cl)(Cl)Cl,-2.18
+nitrofurantoin,O=C2CN(N=Cc1ccc(o1)N(=O)=O)C(=O)N2 ,-3.38
+Propyl butyrate,CCCC(=O)OC,-1.92
+Propoxur,CNC(=O)Oc1ccccc1OC(C)C,-2.05
+hexacosane,CCCCCCCCCCCCCCCCCCCCCCCCCC,-8.334
+"1,2,3,4-Tetrahydronapthalene",C1CCc2ccccc2C1,-4.37
+2-Isopropyltoluene,CC(C)c1ccccc1C,-3.76
+chloralose,OCC(O)C2OC1OC(OC1C2O)C(Cl)(Cl)Cl ,-1.84
+Anthracene,c1ccc2cc3ccccc3cc2c1,-6.35
+Erythritol,OCC(O)C(O)CO,0.7
+Dioxacarb,CNC(=O)Oc1ccccc1C2OCCO2,-1.57
+p-Nitrophenol,Oc1ccc(cc1)N(=O)=O,-0.74
+"2,2',3,4,5-PCB",Clc1cc(Cl)c(cc1Cl)c2cccc(Cl)c2Cl ,-7.21
+Propyl formate,CCCOC=O,-0.49
+Isopropyl formate,CC(C)OC=O,-0.63
+Inosine,OCC1OC(C(O)C1O)n2cnc3c(O)ncnc23,-1.23
+Chlorodibromethane,ClC(Br)Br,-1.9
+Diethyl sulfide,CCSCC,-1.34
+Triphenylene,c1ccc2c(c1)c3ccccc3c4ccccc24,-6.726
+2-Methylpentane,CCCC(C)C,-3.74
+"2,4-Dichlorophenol ",Oc1ccc(Cl)cc1Cl,-1.55
+Bromobenzene,Brc1ccccc1,-2.55
+5-Nonanone,CCCCC(=O)CCCC,-2.58
+p-Bromoiodobenzene,Brc1ccc(I)cc1,-4.56
+Phenol,c1ccccc1O,0.0
+Testosterone,CC12CCC3C(CCC4=CC(=O)CCC34C)C2CCC1O,-4.02
+Flucythrinate,CC(C)C(C(=O)OC(C#N)c1cccc(Oc2ccccc2)c1)c3ccc(OC(F)F)cc3,-6.876
+Trichloromethane,ClC(Cl)Cl,-1.17
+Cypermethrin,CC1(C)C(C=C(Cl)Cl)C1C(=O)OC(C#N)c2cccc(Oc3ccccc3)c2,-8.017000000000001
+RTI 13,CCN2c1nc(C)cc(C(F)(F)F)c1NC(=O)c3cccnc23 ,-4.207
+Trifluralin,CCCN(CCC)c1c(cc(cc1N(=O)=O)C(F)(F)F)N(=O)=O,-5.68
+Benzo(e)pyrene,c1ccc2c(c1)c3cccc4ccc5cccc2c5c43,-7.8
+"2,3-Dimethylnaphthalene",Cc1cc2ccccc2cc1C,-4.72
+Dienestrol,CC=C(C(=CC)c1ccc(O)cc1)c2ccc(O)cc2,-4.95
+tetrachloroguaiacol,COc1c(O)c(Cl)c(Cl)c(Cl)c1Cl ,-4.02
+"2,2,5-Trimethylhexane",CC(C)CCC(C)(C)C,-5.05
+Fluvalinate,CC(C)C(Nc1ccc(cc1Cl)C(F)(F)F)C(=O)OC(C#N)c2cccc(Oc3ccccc3)c2,-8.003
+2-Methylheptane,CCCCCC(C)C,-5.08
+3-Methylcholanthrene,c1cc(C)cc2c1c3cc4cccc5CCc(c45)c3cc2,-7.92
+Isopentyl formate,CC(C)CCOC=O,-1.52
+"5,6,7,8-tetrahydro-2-naphthol",Oc2ccc1CCCCc1c2 ,-1.99
+2-Ethyl-1-butanol,CCC(CC)CO,-1.17
+RTI 19,CCN2c1ccccc1N(C)C(=O)c3ccccc23 ,-4.749
+piperonal,O=Cc2ccc1OCOc1c2 ,-1.63
+Santonin,CC3C2CCC1(C)C=CC(=O)C(=C1C2OC3=O)C,-3.09
+ethyl cinnamate,CCOC(=O)C=Cc1ccccc1,-3.0
+Permethrin,CC1(C)C(C=C(Cl)Cl)C1C(=O)OCc2cccc(Oc3ccccc3)c2,-6.291

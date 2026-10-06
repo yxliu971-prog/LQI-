@@ -1,0 +1,38 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><style>body{font-family:'Microsoft YaHei UI';font-size:14px;color:#59426e;background:#fff;line-height:1.8}h1{color:#805bad;font-size:23px}h2{color:#8560ad;font-size:17px;margin-top:22px}strong{color:#805bad}code{background:#f0e8f9;padding:5px}table{border-collapse:collapse;width:100%}td{padding:7px;border-bottom:1px solid #e8def1}</style><body>
+<h1>LQI· 自带数据快速体验</h1>
+<p><a href="#import-data">导入自己的实验数据：模板位置与填写格式</a></p>
+<p>无需准备文件，无需联网。跟着下面 5 步完成一次分析。</p>
+<h2>1　加载 60 条示例</h2>
+<p>打开“数据与预处理”→ 点击<strong>“加载溶解度示例 · 60 条”</strong>。应看到：数据记录 60、有效结构 60、待处理行 0。</p>
+<p>结构列自动选中 smiles（分子线性编码），目标列自动选中 logS (mol/L)（摩尔每升溶解度的十进对数）。任务是根据分子结构估计水溶解度。</p>
+<h2>2　用默认设置训练</h2>
+<p>进入“模型与解释”，保持下面设置，点击<strong>“开始训练与交叉验证 →”</strong>。</p>
+<table><tr><td>分子特征</td><td>化学描述符 · 24 个</td></tr><tr><td>回归模型</td><td>Ridge（岭回归）</td></tr><tr><td>缺失处理</td><td>中位数填充（特征）</td></tr><tr><td>数据缩放</td><td>StandardScaler（标准化缩放）</td></tr><tr><td>Bootstrap（自助重采样）次数</td><td>60</td></tr></table>
+<p>训练完成后，示例结果约为：<strong>R2（决定系数）0.856；MAE（平均绝对误差）0.683；RMSE（均方根误差）0.902</strong>。决定系数通常越接近 1 越好，误差通常越小越好。</p>
+<p>向下滚动，查看预测散点及 SHAP（沙普利特征贡献）前五项。首次运行可能稍慢，等待底部提示完成。</p>
+<h2>3　生成化学空间</h2>
+<p>进入“化学空间”，保留内置参考集和 PCA（主成分分析），点击<strong>“生成联合化学空间 →”</strong>。紫色为示例分子，浅灰紫为参考分子，玫紫色为低相似度分子。</p>
+<p>悬停查看分子结构；滚轮缩放，拖动平移，双击复位。<strong>低相似度 0 个是正常的</strong>：示例就来自这份参考集。也可切换 t-SNE（分布随机邻域嵌入）后重新生成。</p>
+<h2>4　预测一个分子</h2>
+<p>进入“新分子预测”，第一行粘贴下面的 SMILES（分子线性编码），第二行留空，再点击<strong>“预测分子属性 →”</strong>：</p>
+<p><code>CC(=O)Oc1ccccc1C(=O)O</code></p>
+<p>默认设置下预测约 −1.858，模型均值区间约 [−2.286, −1.347]。下方可查看 3 个最相似的参考分子。区间不是未来单次实验结果的保证范围。</p>
+<h2>5　导出报告</h2>
+<p>进入“诊断报告”，选择导出 PDF（便携文档格式）或 HTML（网页格式）。报告会合并刚才的训练、解释、空间和预测结果。</p>
+<p>顶部“保存项目”可保存数据与设置；重新打开项目后需要重训。初次体验无需更新数据，也无需更改参数。</p>
+<h2 id="import-data"><a name="import-data"></a>导入自己的实验数据</h2>
+<p>在软件文件夹中打开<strong>“导入模板”</strong>，复制其中的 <strong>LQI_数据导入模板.xlsx</strong> 或 <strong>LQI_数据导入模板.csv</strong>，另存为自己的实验文件。文件夹中还提供“导入格式说明.html”和 12 条公开数据的填写示例。</p>
+<p>Excel（电子表格）模板中的<strong>“填写数据”</strong>用于填写和导入；“格式示例”只作参考，“填写说明”介绍规则。空白模板只有列名，需要先填入实验数据。</p>
+<table><tr><td><strong>列名</strong></td><td><strong>填写规则</strong></td></tr>
+<tr><td>样品编号</td><td>推荐填写，例如 S001。不作为模型特征。</td></tr>
+<tr><td>smiles（分子线性编码）</td><td>必填有效结构编码，例如 CCO。不能用分子名称、登记编号或图片替代。</td></tr>
+<tr><td>target（目标实测值）</td><td>训练必填数值。可以改成自己的属性列名，例如“溶解度（mg/mL）”或“收率（%）”。</td></tr>
+<tr><td>温度（℃）、时间（h）、浓度（mol/L）</td><td>可选，填写数字。不使用时留空或删除整列。</td></tr></table>
+<p><strong>格式：</strong>第一行是列名，从第二行开始每行一条观测。不合并单元格、不加标题行和合计行、不用重复或空列名。支持 .xlsx 与 UTF-8（通用字符编码）的逗号分隔 CSV 文件。</p>
+<p><strong>单位：</strong>单位写在列名中，单元格只填数值。若收率以 % 为单位，82.5% 请填 82.5，不要使用 Excel 百分比格式。整列单位和数值尺度保持一致，不混用溶解度原值与其对数。</p>
+<p><strong>缺失：</strong>留空，不要用 0 或“未测”代替。缺失目标不能通过均值/中位数填充后用于训练。公式结果先复制并粘贴为数值，结构编码和编号按文本保存。</p>
+<p><strong>数据量：</strong>训练至少需要 10 条有效观测、6 种不同分子，目标不能全部相同，推荐先用少于 100 条数据。</p>
+<p><strong>导入：</strong>点击“导入 CSV / Excel”，选择填写好的文件和数据工作表，再确认结构列、目标列。修正红色结构错误和黄色目标缺失提示。一次只选一个目标，样品编号和其他目标不应作为特征。</p>
+<p><strong>实验条件：</strong>需要模型使用温度等条件时，在附加数值特征中勾选这些列；预测时也要提供相同字段，例如 <code>{"温度（℃）":25,"时间（h）":2,"浓度（mol/L）":0.1}</code>。没有附加条件时留空。</p>
+<p>格式示例的 target 是 logS（摩尔每升溶解度的十进对数），数据来自已附带的 ESOL（水溶解度数据集）示例。温度等未知条件保持空白。不要将示例混入自己的实验表。当前不支持直接导入反应方程式或 reaction SMILES（反应分子编码）。</p>
+</body></html>

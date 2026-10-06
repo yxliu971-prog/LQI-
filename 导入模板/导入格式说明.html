@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>LQI 数据导入格式说明</title>
+<style>body{font-family:'Microsoft YaHei UI',sans-serif;background:#f8f5fc;color:#4b385e;line-height:1.85;margin:0;padding:32px}main{max-width:1020px;margin:auto;background:white;padding:32px;border:1px solid #e8dff2;border-radius:14px}h1,h2{color:#7954a3}h1{font-size:27px}h2{font-size:20px;margin-top:30px}a{color:#7954a3}table{width:100%;border-collapse:collapse}th{background:#ede3f7;text-align:left}th,td{padding:10px 13px;border-bottom:1px solid #e8dff2}code,pre{background:#f4eefb;padding:4px 7px;border-radius:4px}pre{padding:14px;white-space:pre-wrap}.note{background:#f4eefb;border-left:4px solid #a385bf;padding:12px 18px}li{margin:6px 0}</style>
+</head><body><main>
+<h1>LQI 数据导入格式说明</h1>
+<p>先复制模板并另存为自己的实验文件。第一行保留列名，从第二行开始，每行填写一条观测。</p>
+<p><a href="LQI_数据导入模板.xlsx">打开 Excel（电子表格）模板</a>　·　<a href="LQI_数据导入模板.csv">打开 CSV（逗号分隔表格）模板</a>　·　<a href="LQI_填写示例_12条.csv">查看 12 条填写示例</a></p>
+<div class="note">Excel 模板有三个工作表：<strong>填写数据</strong>用于输入自己的数据，<strong>格式示例</strong>用于查看参考，<strong>填写说明</strong>解释规则。导入自己的数据时，请选择“填写数据”。空白模板只有列名，填写完成后再导入。</div>
+<h2>每列怎么填写</h2>
+<table><tr><th>列名</th><th>要求</th><th>填写内容</th></tr>
+<tr><td>样品编号</td><td>推荐</td><td>例如 S001，作为记录标识，不作为模型特征。</td></tr>
+<tr><td>smiles（分子线性编码）</td><td>必填</td><td>有效分子结构编码，例如 CCO。不能用分子名称、CAS（化学物质登记）编号或结构图片替代。</td></tr>
+<tr><td>target（目标实测值）</td><td>训练必填</td><td>实际测得的数值。可改名为“溶解度（mg/mL）”“收率（%）”或“带隙（eV）”。</td></tr>
+<tr><td>温度（℃）</td><td>可选</td><td>只填数字，例如 25。</td></tr>
+<tr><td>时间（h）</td><td>可选</td><td>只填数字，例如 2，整列使用小时。</td></tr>
+<tr><td>浓度（mol/L）</td><td>可选</td><td>只填数字，例如 0.1，整列使用同一单位。</td></tr></table>
+<p>最简文件只需要一列结构和一列目标数值。列名可以修改，列顺序可以变化，导入后请确认选择正确。可选条件不用时留空或删除整列。</p>
+<h2>数值和单位</h2><ul>
+<li>单位写在列名中，单元格只填数值。填写 25，不要填写“25℃”。</li>
+<li>如果收率列以 % 为单位，82.5% 的收率请填 <strong>82.5</strong>，不要设置 Excel 百分比格式。0～1 的比例与 0～100 的百分数不能混用。</li>
+<li>整列使用同一种单位。溶解度原值与其对数、mg/mL 与 mol/L 不能混用。示例目标是 logS（摩尔每升溶解度的十进对数），允许为负数。</li>
+<li>缺失值留空，不要填 0、“未测”或横线。0 是真实数值。目标缺失不能用均值或中位数补齐后用于训练。</li>
+<li>公式结果在导入前先复制并粘贴为数值。结构编码和编号按文本保存，避免被自动转换成日期。</li>
+</ul>
+<h2>文件格式和数据量</h2><ul>
+<li>使用 .xlsx 或 UTF-8（通用字符编码）的逗号分隔 CSV 文件。不支持直接导入 .xls、图片或 PDF。</li>
+<li>第一行是列名，不加大标题，不合并单元格，不用重复列名或空列名，不加合计、均值或说明行。</li>
+<li>训练至少需要 <strong>10 条有效观测、6 种不同分子</strong>，目标不能全部相同。推荐先用少于 100 条数据。</li>
+<li>平行实验可分别成行，使用独立编号。相同分子会被分配到同一交叉验证组。</li>
+<li>可以有多个目标列，但每次训练只选一个目标。不要把样品编号、其他标签或由目标推算的量作为特征。</li>
+</ul>
+<h2>导入操作</h2><ol>
+<li>打开“数据与预处理”，点击“导入 CSV / Excel”。</li>
+<li>选择填写好的文件。如果是 Excel，选择“填写数据”工作表。</li>
+<li>确认结构列为 smiles（分子线性编码），目标列为 target（目标实测值）或自己的属性列。</li>
+<li>修正红色结构错误、黄色目标缺失。软件自动识别列后，仍需人工确认。</li>
+<li>需要模型使用温度、时间或浓度时，在附加数值特征中勾选对应列；不用的列不勾选。</li>
+<li>进入“模型与解释”开始训练。未知目标的新分子，在训练后通过“新分子预测”页面输入。</li>
+</ol>
+<p>如果训练使用了附加条件，预测时也须提供相同字段，例如：</p>
+<pre>{"温度（℃）":25,"时间（h）":2,"浓度（mol/L）":0.1}</pre>
+<p>字段名必须与训练时选择的列名一致，只填写实际用到的条件；没有附加条件时留空。</p>
+<h2>格式示例的来源</h2>
+<p>示例取自软件附带的 examples/solubility_60.csv 前 12 条记录，来源为 <a href="https://raw.githubusercontent.com/deepchem/deepchem/master/datasets/delaney-processed.csv">Delaney / ESOL（德莱尼水溶解度数据集）</a>。target 表示 logS，编号是为展示格式增加的标识。温度、时间、浓度没有公开实测值，因此留空。正式分析时不要把示例混入自己的实验数据。</p>
+<p>当前软件按每行一个分子编码处理，不支持将反应方程式或 reaction SMILES（反应分子编码）直接填入普通结构列。</p>
+</main></body></html>

@@ -1,0 +1,47 @@
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+cachedir/
+.coverage
+htmlcov/
+*.egg-info/
+
+# Build output and local reports / experiments
+build/
+dist/
+releases/
+work/
+logs/
+user_data/
+diagnostics/
+*.spec
+*.log
+*.lnk
+*.zip
+*.exe
+*.dll
+*.pyd
+*.lqi.json
+*.chembridge.json
+experiment*.json
+experiment*.csv
+experiment*.xlsx
+LQI_report.*
+LQI_analysis_*/
+release.json
+
+# Credentials and OS files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+Thumbs.db
+Desktop.ini
